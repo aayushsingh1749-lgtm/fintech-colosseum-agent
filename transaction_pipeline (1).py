@@ -7,10 +7,6 @@ Four distinct defensive components, each independently callable/testable:
   2. Schema Inspector         -> inspect_schema()
   3. Input Validator          -> validate_input()
   4. Air-Gap Guardrail        -> apply_guardrail()
-
-Everything else (currency conversion, enrichment, anomaly detection) is
-business logic built on top of those four, kept separate so the four
-components stay easy to point to individually.
 """
 
 import statistics
