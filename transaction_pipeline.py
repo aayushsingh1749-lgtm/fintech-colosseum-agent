@@ -1,23 +1,9 @@
-"""
-FinTech Transaction Pipeline
-----------------------------
-1. Fetch raw transactions (with retry/backoff) from a source API.
-2. Fetch current exchange rates (with retry/backoff).
-3. Validate + normalize each transaction into a fixed schema.
-4. Convert all amounts to a single base currency (INR).
-5. Enrich with merchant category.
-6. Detect unusual spending patterns using a statistical threshold
-   (mean + N*std) rather than an arbitrary hardcoded number.
-"""
 
 import statistics
 import time
 
 import requests
 
-# ---------------------------------------------------------------------------
-# Config
-# ---------------------------------------------------------------------------
 TRANSACTION_FEED_URL = "https://fake.jsonmockapi.com/transactions"
 EXCHANGE_RATE_API_URL = "https://api.exchangerate-api.com/v4/latest/INR"
 
